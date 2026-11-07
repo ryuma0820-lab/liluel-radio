@@ -43,6 +43,9 @@ jobs:
           GITHUB_REPOSITORY: ${{ github.repository }}
           FORCE_REPLACE: ${{ inputs.force_regenerate && '1' || '0' }}
         run: python tools/liluel_daily.py
+      - name: Fetch official news image previews
+        if: steps.generate.outputs.published == 'true'
+        run: python tools/liluel_images.py --today
       - name: Commit script only
         if: steps.generate.outputs.published == 'true'
         run: |

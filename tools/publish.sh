@@ -1,41 +1,55 @@
 #!/bin/bash
-# 局を GitHub Pages に公開する：gh-pages ブランチを「main の中身＋直近の音声」のコミット 1 つで上書きする。
-# 音声は git の履歴に入らない（古い音声は履歴ごと消える）。直近の日数と音声のフォルダは station.json の audio（既定 30 日、audio/）。
-# usage: tools/publish.sh   （局のリポジトリの中で。origin に push できること）
-# 共有カード（share/）も作る：Pillow のある python を SHARE_PYTHON に、日本語の入ったフォントを SHARE_FONT に（tools/share.py）
+# Publish static files from main and retain previously published audio on gh-pages.
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
 ROOT=$PWD
 read -r DIR KEEP < <(python3 -c 'import json; a = json.load(open("station.json")).get("audio", {}); print(a.get("dir", "audio"), a.get("keep_days", 30))')
 CUT=$(python3 -c "import datetime; print((datetime.date.today() - datetime.timedelta(days=$KEEP)).isoformat())")
 REMOTE=$(git remote get-url origin)
-NAME=$(git config user.name || echo myradio); EMAIL=$(git config user.email || echo myradio@users.noreply.github.com)
-
-# GitHub Actions の checkout 認証情報は元の .git/config に保存される。
-# mktemp で作る新規リポジトリには継承されないので、push 時に明示的に渡す。
-# 値を標準出力やログに表示しないこと。
-GITHUB_AUTH_HEADER=$(git -C "$ROOT" config --local --get 'http.https://github.com/.extraheader' || true)
-
-TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
-git archive HEAD | tar -x -C "$TMP"              # what main has (committed)
+NAME=$(git config user.name || echo 'github-actions[bot]')
+EMAIL=$(git config user.email || echo '41898282+github-actions[bot]@users.noreply.github.com')
+AUTH=$(git -C "$ROOT" config --local --get 'http.https://github.com/.extraheader' || true)
+TMP=$(mktemp -d)
+OLD=$(mktemp -d)
+trap 'rm -rf "$TMP" "$OLD"' EXIT
+git archive HEAD | tar -x -C "$TMP"
 mkdir -p "$TMP/$DIR"
-n=0
-for f in "$DIR"/*; do                            # audio files named <YYYY-MM-DD>...; keep the recent ones
-  [ -e "$f" ] || continue
+# Remote gh-pages contains the MP3 files excluded from the main branch by .gitignore.
+# Copy them first, then overwrite with a newly generated local MP3 if present.
+if git fetch -q origin gh-pages:refs/remotes/origin/gh-pages 2>/dev/null; then
+  if git archive refs/remotes/origin/gh-pages "$DIR" 2>/dev/null | tar -x -C "$OLD" 2>/dev/null; then
+    for f in "$OLD/$DIR"/*; do
+      [ -f "$f" ] || continue
+      d=$(basename "$f"); d=${d:0:10}
+      if [[ ! "$d" < "$CUT" ]]; then cp "$f" "$TMP/$DIR/"; fi
+    done
+  fi
+fi
+for f in "$DIR"/*; do
+  [ -f "$f" ] || continue
   d=$(basename "$f"); d=${d:0:10}
-  if [[ ! "$d" < "$CUT" ]]; then cp "$f" "$TMP/$DIR/"; n=$((n + 1)); fi
+  if [[ ! "$d" < "$CUT" ]]; then cp "$f" "$TMP/$DIR/"; fi
 done
-# share cards (tools/share.py) when Pillow is there: SHARE_PYTHON picks the python, SHARE_FONT the font
+# Purge expired audio if it was committed to main unexpectedly.
+for f in "$TMP/$DIR"/*; do
+  [ -f "$f" ] || continue
+  d=$(basename "$f"); d=${d:0:10}
+  if [[ "$d" < "$CUT" ]]; then rm -f "$f"; fi
+done
 PY=${SHARE_PYTHON:-python3}
-if "$PY" -c "import PIL" 2>/dev/null; then "$PY" tools/share.py "$TMP" --all --front; else echo "share cards: skipped (no Pillow)"; fi
-touch "$TMP/.nojekyll"                           # serve files as they are
+if [[ -f tools/share.py ]] && "$PY" -c 'import PIL' 2>/dev/null; then
+  "$PY" tools/share.py "$TMP" --all --front
+else
+  echo 'share cards: skipped (no Pillow)'
+fi
+touch "$TMP/.nojekyll"
 cd "$TMP"
 git init -q -b gh-pages
-git add -A -f                                     # the audio too (the copied .gitignore keeps it off main only)
+git add -A -f
 git -c user.name="$NAME" -c user.email="$EMAIL" commit -q -m "publish $(date +%F)"
-if [[ -n "$GITHUB_AUTH_HEADER" && "$REMOTE" == https://github.com/* ]]; then
-  git -c "http.https://github.com/.extraheader=$GITHUB_AUTH_HEADER" push -q -f "$REMOTE" gh-pages
+if [[ -n "$AUTH" && "$REMOTE" == https://github.com/* ]]; then
+  git -c "http.https://github.com/.extraheader=$AUTH" push -q -f "$REMOTE" gh-pages
 else
   git push -q -f "$REMOTE" gh-pages
 fi
-echo "published gh-pages: $(git ls-files | wc -l | tr -d ' ') files, $n audio (since $CUT)"
+echo "published gh-pages: $(git ls-files | wc -l | tr -d ' ') files, $(find "$DIR" -maxdepth 1 -type f -name '*.mp3' | wc -l | tr -d ' ') audio"

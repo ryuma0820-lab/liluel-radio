@@ -7,28 +7,19 @@
   "url": "https://ryuma0820-lab.github.io/liluel-radio/",
   "repo": "https://github.com/ryuma0820-lab/liluel-radio",
   "language": "ja",
-  "languages": [
-    "ja"
-  ],
-  "schedule": {
-    "every": "day",
-    "time": "08:00",
-    "timezone": "Asia/Tokyo"
-  },
+  "languages": ["ja"],
+  "schedule": {"every": "day", "time": "08:00", "timezone": "Asia/Tokyo"},
   "episodes": "episodes.json",
   "character": {
     "pack": "character/character.json",
-    "thumbnail": "character/base.png",
-    "note": "初期状態では元テンプレートの仮キャラクター。リルエル専用素材へ置き換える予定です。"
+    "thumbnail": "character/idle.webp",
+    "note": "確定したリルエルのPNG Tuber原画を使ったアニメーション立ち絵。"
   },
   "credits": [
     "音声はAI合成（ElevenLabs）です。",
     "プレーヤー原案：monoradio102 / myradio（MIT License）"
   ],
   "caster": "リルエル｜AI音声キャスター",
-  "audio": {
-    "dir": "audio",
-    "keep_days": 30
-  },
+  "audio": {"dir": "audio", "keep_days": 30},
   "weather": false
 }
