@@ -5,10 +5,16 @@
 # 共有カード（share/）も作る：Pillow のある python を SHARE_PYTHON に、日本語の入ったフォントを SHARE_FONT に（tools/share.py）
 set -euo pipefail
 cd "$(git rev-parse --show-toplevel)"
+ROOT=$PWD
 read -r DIR KEEP < <(python3 -c 'import json; a = json.load(open("station.json")).get("audio", {}); print(a.get("dir", "audio"), a.get("keep_days", 30))')
 CUT=$(python3 -c "import datetime; print((datetime.date.today() - datetime.timedelta(days=$KEEP)).isoformat())")
 REMOTE=$(git remote get-url origin)
 NAME=$(git config user.name || echo myradio); EMAIL=$(git config user.email || echo myradio@users.noreply.github.com)
+
+# GitHub Actions の checkout 認証情報は元の .git/config に保存される。
+# mktemp で作る新規リポジトリには継承されないので、push 時に明示的に渡す。
+# 値を標準出力やログに表示しないこと。
+GITHUB_AUTH_HEADER=$(git -C "$ROOT" config --local --get 'http.https://github.com/.extraheader' || true)
 
 TMP=$(mktemp -d); trap 'rm -rf "$TMP"' EXIT
 git archive HEAD | tar -x -C "$TMP"              # what main has (committed)
@@ -27,5 +33,9 @@ cd "$TMP"
 git init -q -b gh-pages
 git add -A -f                                     # the audio too (the copied .gitignore keeps it off main only)
 git -c user.name="$NAME" -c user.email="$EMAIL" commit -q -m "publish $(date +%F)"
-git push -q -f "$REMOTE" gh-pages
+if [[ -n "$GITHUB_AUTH_HEADER" && "$REMOTE" == https://github.com/* ]]; then
+  git -c "http.https://github.com/.extraheader=$GITHUB_AUTH_HEADER" push -q -f "$REMOTE" gh-pages
+else
+  git push -q -f "$REMOTE" gh-pages
+fi
 echo "published gh-pages: $(git ls-files | wc -l | tr -d ' ') files, $n audio (since $CUT)"

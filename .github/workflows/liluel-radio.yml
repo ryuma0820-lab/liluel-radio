@@ -1,6 +1,12 @@
 name: Liluel Daily Radio
 on:
   workflow_dispatch:
+    inputs:
+      force_regenerate:
+        description: '同じ日付の放送を再生成する（APIクレジット消費あり）'
+        type: boolean
+        required: false
+        default: false
   schedule:
     # 日本時間 07:27（前日 22:27 UTC）。08:00 配信を目標。
     # GitHub Actions の時刻は遅延する場合があります。
@@ -35,6 +41,7 @@ jobs:
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
           OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
           GITHUB_REPOSITORY: ${{ github.repository }}
+          FORCE_REPLACE: ${{ inputs.force_regenerate && '1' || '0' }}
         run: python tools/liluel_daily.py
       - name: Commit script only
         if: steps.generate.outputs.published == 'true'
