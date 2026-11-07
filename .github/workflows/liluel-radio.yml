@@ -23,8 +23,10 @@ jobs:
           python-version: '3.12'
       - name: Install requirements
         run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
           python -m pip install -r requirements-radio.txt
-          command -v ffmpeg
+          ffmpeg -version
       - name: Search, write, voice and time the episode
         id: generate
         env:
