@@ -1,0 +1,36 @@
+name: Liluel Site Refresh
+on:
+  workflow_dispatch:
+    inputs:
+      refresh_images:
+        description: '公式サイトのニュース画像プレビューも更新する（音声APIは使いません）'
+        type: boolean
+        required: false
+        default: true
+permissions:
+  contents: write
+concurrency:
+  group: liluel-radio-publish
+  cancel-in-progress: false
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Optionally refresh official article image links
+        if: ${{ inputs.refresh_images }}
+        run: python3 tools/liluel_images.py --all
+      - name: Commit image URLs to main
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add episodes/
+          if ! git diff --cached --quiet; then
+            git commit -m 'radio: update official article previews'
+            git push origin HEAD:main
+          fi
+      - name: Publish current site without regenerating speech
+        run: bash tools/publish.sh
