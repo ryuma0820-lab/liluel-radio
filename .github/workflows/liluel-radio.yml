@@ -1,0 +1,59 @@
+name: Liluel Daily Radio
+on:
+  workflow_dispatch:
+    inputs:
+      force_regenerate:
+        description: '同じ日付の放送を再生成する（APIクレジット消費あり）'
+        type: boolean
+        required: false
+        default: false
+  schedule:
+    # 日本時間 07:27（前日 22:27 UTC）。08:00 配信を目標。
+    # GitHub Actions の時刻は遅延する場合があります。
+    - cron: '27 22 * * *'
+permissions:
+  contents: write
+concurrency:
+  group: liluel-radio-publish
+  cancel-in-progress: false
+jobs:
+  broadcast:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install requirements
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y ffmpeg
+          python -m pip install -r requirements-radio.txt
+          ffmpeg -version
+      - name: Search, write, voice and time the episode
+        id: generate
+        env:
+          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          OPENAI_MODEL: ${{ vars.OPENAI_MODEL || 'gpt-5.4-mini' }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          FORCE_REPLACE: ${{ inputs.force_regenerate && '1' || '0' }}
+        run: python tools/liluel_daily.py
+      - name: Fetch official news image previews
+        if: steps.generate.outputs.published == 'true'
+        run: python tools/liluel_images.py --today
+      - name: Commit script only
+        if: steps.generate.outputs.published == 'true'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add station.json episodes.json episodes/
+          git diff --cached --quiet || git commit -m "radio: $(TZ=Asia/Tokyo date +%F) daily episode"
+          git push origin HEAD:${{ github.event.repository.default_branch }}
+      - name: Publish audio and player to GitHub Pages
+        if: steps.generate.outputs.published == 'true'
+        run: bash tools/publish.sh

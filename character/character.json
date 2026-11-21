@@ -1,0 +1,11 @@
+{
+  "format": "myradio/character-1",
+  "type": "clips",
+  "idle": "idle.webp",
+  "talk": [
+    "talk_a.mp4",
+    "talk_b.mp4"
+  ],
+  "background": "#161a26",
+  "note": "Original Liluel PNGTuber 4-state artwork adapted to an animated WebP idle and talking MP4 clips."
+}
