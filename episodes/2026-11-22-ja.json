@@ -1,0 +1,320 @@
+{
+  "title": "リルエル・モーニングラジオ",
+  "opening": [
+    {
+      "say": "おはようございます。リルエル・モーニングラジオ、やさしくお届けいたします。",
+      "show": "おはようございます。リルエル・モーニングラジオ、やさしくお届けいたします。"
+    },
+    {
+      "say": "きょうは、東京ディズニーリゾートとツイステの公式情報を中心に、静かに整理してご案内します。",
+      "show": "きょうは、東京ディズニーリゾートとツイステの公式情報を中心に、静かに整理してご案内します。"
+    }
+  ],
+  "news": [
+    {
+      "label": "Disney公式、D23 Asiaのチケット販売開始を案内",
+      "points": [
+        "2027年開催予定のD23 Asiaについて、チケット販売開始が案内されています。",
+        "先行販売の条件や開催地もあわせて示されています。",
+        "東京ディズニーリゾート関連の周辺情報として確認できます。"
+      ],
+      "lines": [
+        {
+          "say": "まずはディズニーの公式発表です。D23 Asiaのチケット販売開始が案内されました。",
+          "show": "Disney公式：D23 Asia のチケット販売開始告知"
+        },
+        {
+          "say": "先行販売の条件や開催地も示されています。ファンイベントとしての案内ですね。",
+          "show": "先行販売条件・開催地の案内"
+        }
+      ],
+      "url": "https://www.disney.co.jp/corporate/news/2026/20261116?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://www.disney.co.jp/corporate/news/2026/20261116?utm_source=openai",
+        "title": "Disney公式、D23 Asiaのチケット販売開始を案内",
+        "site": "www.disney.co.jp",
+        "description": "2027年開催予定のD23 Asiaについて、チケット販売開始が案内されています。",
+        "image": "https://lumiere-a.akamaihd.net/v1/images/d23_pr_kv_sp_57f60fc0.jpeg?region=0%2C0%2C677%2C677",
+        "icon": null
+      }
+    },
+    {
+      "label": "Disney公式、D23 Asiaのプログラム第一弾を発表",
+      "points": [
+        "2027年6月25日〜27日にシンガポールで開催予定です。",
+        "プログラムの第一弾が公式に発表されています。",
+        "D23 Asia全体の内容を知る手がかりになります。"
+      ],
+      "lines": [
+        {
+          "say": "つづいて、D23 Asiaのプログラム第一弾です。",
+          "show": "Disney公式：D23 Asia のプログラム第一弾発表"
+        },
+        {
+          "say": "2027年6月25日から27日まで、シンガポールでの開催予定とされています。",
+          "show": "2027年6月25日〜27日、シンガポール開催予定"
+        }
+      ],
+      "url": "https://www.disney.co.jp/corporate/news/2026/20261105?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://www.disney.co.jp/corporate/news/2026/20261105?utm_source=openai",
+        "title": "Disney公式、D23 Asiaのプログラム第一弾を発表",
+        "site": "www.disney.co.jp",
+        "description": "2027年6月25日〜27日にシンガポールで開催予定です。",
+        "image": "https://lumiere-a.akamaihd.net/v1/images/corp_news_261105_sp_83a4e346.jpeg?region=0%2C0%2C677%2C677",
+        "icon": null
+      }
+    },
+    {
+      "label": "ディズニーストア、冬向けコレクションの案内",
+      "points": [
+        "『WHITE WINTER 2026』が案内されています。",
+        "11月20日から順次発売と確認できます。",
+        "冬の新コレクションとして紹介されています。"
+      ],
+      "lines": [
+        {
+          "say": "こちらはディズニーストアの話題です。冬向けの新コレクションが案内されています。",
+          "show": "Disney公式：WHITE WINTER 2026"
+        },
+        {
+          "say": "『WHITE WINTER 2026』は、11月20日から順次発売と確認できます。",
+          "show": "11月20日から順次発売"
+        }
+      ],
+      "url": "https://www.disney.co.jp/news?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://www.disney.co.jp/news?utm_source=openai",
+        "title": "ディズニーストア、冬向けコレクションの案内",
+        "site": "www.disney.co.jp",
+        "description": "『WHITE WINTER 2026』が案内されています。",
+        "image": null,
+        "icon": null
+      }
+    },
+    {
+      "label": "東京ディズニーリゾート公式ニュース一覧を確認",
+      "points": [
+        "公式のパーク&リゾートニュース一覧が確認できています。",
+        "今回の検索では、11月19日以降の個別新着記事は特定できませんでした。",
+        "最新確認の入口として参照できます。"
+      ],
+      "lines": [
+        {
+          "say": "東京ディズニーリゾートは、公式ニュース一覧の確認ができています。",
+          "show": "東京ディズニーリゾート公式ニュース一覧"
+        },
+        {
+          "say": "ただ、今回の確認では、個別の新着記事までは特定できませんでした。",
+          "show": "11月19日以降の個別新着記事は未特定"
+        }
+      ],
+      "url": "https://www.disney.co.jp/park/news?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://www.disney.co.jp/park/news?utm_source=openai",
+        "title": "東京ディズニーリゾート公式ニュース一覧を確認",
+        "site": "www.disney.co.jp",
+        "description": "公式のパーク&リゾートニュース一覧が確認できています。",
+        "image": null,
+        "icon": null
+      }
+    },
+    {
+      "label": "ツイステ公式ニュース一覧を確認",
+      "points": [
+        "ツイステ公式のニュース一覧が確認できています。",
+        "直近の確認では、2026年3月29日の告知が最新級として見えています。",
+        "ただし、今朝の速報として扱うには時期が古い内容です。"
+      ],
+      "lines": [
+        {
+          "say": "最後はツイステです。公式ニュース一覧が確認できています。",
+          "show": "ツイステ公式ニュース一覧"
+        },
+        {
+          "say": "直近の確認では、2026年3月29日の告知が最新級でしたが、今朝の速報としては古めです。",
+          "show": "2026年3月29日の告知"
+        }
+      ],
+      "url": "https://twisted-wonderland.aniplex.co.jp/news/?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://twisted-wonderland.aniplex.co.jp/news/?utm_source=openai",
+        "title": "ツイステ公式ニュース一覧を確認",
+        "site": "twisted-wonderland.aniplex.co.jp",
+        "description": "ツイステ公式のニュース一覧が確認できています。",
+        "image": "https://twisted-wonderland.aniplex.co.jp/violet/ogimages/ogimage_0808.png",
+        "icon": null
+      }
+    }
+  ],
+  "closing": [
+    {
+      "say": "きょうのニュースは以上です。公式の確認を大切に、また穏やかにお会いしましょう。",
+      "show": "きょうのニュースは以上です。"
+    },
+    {
+      "say": "リルエル・モーニングラジオ、また明朝お耳にかかります。",
+      "show": "リルエル・モーニングラジオ、また明朝お耳にかかります。"
+    }
+  ],
+  "date": "2026-11-22",
+  "seconds": 87.81,
+  "lines_timed": [
+    {
+      "start": 0.4,
+      "end": 5.137,
+      "show": "おはようございます。リルエル・モーニングラジオ、やさしくお届けいたします。",
+      "part": 0
+    },
+    {
+      "start": 5.357,
+      "end": 12.694,
+      "show": "きょうは、東京ディズニーリゾートとツイステの公式情報を中心に、静かに整理してご案内します。",
+      "part": 0
+    },
+    {
+      "start": 13.384,
+      "end": 19.561,
+      "show": "Disney公式：D23 Asia のチケット販売開始告知",
+      "part": 1
+    },
+    {
+      "start": 19.781,
+      "end": 26.143,
+      "show": "先行販売条件・開催地の案内",
+      "part": 1
+    },
+    {
+      "start": 26.833,
+      "end": 30.734,
+      "show": "Disney公式：D23 Asia のプログラム第一弾発表",
+      "part": 2
+    },
+    {
+      "start": 30.954,
+      "end": 37.177,
+      "show": "2027年6月25日〜27日、シンガポール開催予定",
+      "part": 2
+    },
+    {
+      "start": 37.867,
+      "end": 42.975,
+      "show": "Disney公式：WHITE WINTER 2026",
+      "part": 3
+    },
+    {
+      "start": 43.195,
+      "end": 49.976,
+      "show": "11月20日から順次発売",
+      "part": 3
+    },
+    {
+      "start": 50.666,
+      "end": 55.031,
+      "show": "東京ディズニーリゾート公式ニュース一覧",
+      "part": 4
+    },
+    {
+      "start": 55.251,
+      "end": 61.381,
+      "show": "11月19日以降の個別新着記事は未特定",
+      "part": 4
+    },
+    {
+      "start": 62.071,
+      "end": 66.529,
+      "show": "ツイステ公式ニュース一覧",
+      "part": 5
+    },
+    {
+      "start": 66.749,
+      "end": 75.573,
+      "show": "2026年3月29日の告知",
+      "part": 5
+    },
+    {
+      "start": 76.263,
+      "end": 82.904,
+      "show": "きょうのニュースは以上です。",
+      "part": 6
+    },
+    {
+      "start": 83.124,
+      "end": 87.118,
+      "show": "リルエル・モーニングラジオ、また明朝お耳にかかります。",
+      "part": 6
+    }
+  ],
+  "segments": [
+    {
+      "kind": "opening",
+      "index": null,
+      "start": 0.4,
+      "end": 13.384
+    },
+    {
+      "kind": "news",
+      "index": 0,
+      "start": 13.384,
+      "end": 26.833
+    },
+    {
+      "kind": "news",
+      "index": 1,
+      "start": 26.833,
+      "end": 37.867
+    },
+    {
+      "kind": "news",
+      "index": 2,
+      "start": 37.867,
+      "end": 50.666
+    },
+    {
+      "kind": "news",
+      "index": 3,
+      "start": 50.666,
+      "end": 62.071
+    },
+    {
+      "kind": "news",
+      "index": 4,
+      "start": 62.071,
+      "end": 76.263
+    },
+    {
+      "kind": "closing",
+      "index": null,
+      "start": 76.263,
+      "end": 87.808
+    }
+  ],
+  "format": "monoradio/news-1",
+  "lang": "ja",
+  "made_at": "2026-11-22T11:22:59+09:00"
+}

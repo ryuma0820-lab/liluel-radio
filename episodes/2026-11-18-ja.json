@@ -1,0 +1,270 @@
+{
+  "title": "リルエル・モーニングラジオ　東京ディズニーリゾートとツイステの最新ニュース",
+  "opening": [
+    {
+      "say": "おはようございます。リルエル・モーニングラジオ、やさしく小さなニュースをお届けします。",
+      "show": "おはようございます。リルエル・モーニングラジオ、やさしく小さなニュースをお届けします。"
+    },
+    {
+      "say": "きょうは東京ディズニーリゾートとツイステの公式情報を中心に、穏やかにご案内いたします。",
+      "show": "きょうは東京ディズニーリゾートとツイステの公式情報を中心に、穏やかにご案内いたします。"
+    }
+  ],
+  "news": [
+    {
+      "label": "東京ディズニーリゾート 公式ニュース更新",
+      "points": [
+        "11月17日付の新着項目が、公式ニュース一覧に複数掲載されています。",
+        "東京ディズニーランド関連のキャンペーン情報も確認できます。",
+        "番組では、最新の公式更新として静かに押さえておきたい話題です。"
+      ],
+      "lines": [
+        {
+          "say": "東京ディズニーリゾートの公式ニュース一覧に、11月17日付の新着項目が複数並びました。",
+          "show": "東京ディズニーリゾートの公式ニュース一覧に、11月17日付の新着項目が複数並びました。"
+        },
+        {
+          "say": "東京ディズニーランド関連のキャンペーン情報も見えており、公式更新の動きとして注目できます。",
+          "show": "東京ディズニーランド関連のキャンペーン情報も見えており、公式更新の動きとして注目できます。"
+        }
+      ],
+      "url": "https://www.disney.co.jp/news?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://www.disney.co.jp/news?utm_source=openai",
+        "title": "東京ディズニーリゾート 公式ニュース更新",
+        "site": "www.disney.co.jp",
+        "description": "11月17日付の新着項目が、公式ニュース一覧に複数掲載されています。",
+        "image": null,
+        "icon": null
+      }
+    },
+    {
+      "label": "東京ディズニーリゾート お知らせ一覧のチケット案内",
+      "points": [
+        "公式お知らせ一覧に、パークチケットの販売案内が掲載されています。",
+        "期間限定のキャンパスデーパスポートに関する内容です。",
+        "過去の案内ではありますが、公式の運用情報として確認できます。"
+      ],
+      "lines": [
+        {
+          "say": "東京ディズニーリゾートのお知らせ一覧では、パークチケットの販売案内も確認できます。",
+          "show": "東京ディズニーリゾート お知らせ一覧"
+        },
+        {
+          "say": "期間限定のキャンパスデーパスポートに関する案内で、公式の運用情報として受け取れます。",
+          "show": "キャンパスデーパスポート（期間限定）販売のおしらせ"
+        }
+      ],
+      "url": "https://plan.tokyodisneyresort.jp/news/all/?lang=ja&utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://plan.tokyodisneyresort.jp/news/all/?lang=ja&utm_source=openai",
+        "title": "東京ディズニーリゾート お知らせ一覧のチケット案内",
+        "site": "plan.tokyodisneyresort.jp",
+        "description": "公式お知らせ一覧に、パークチケットの販売案内が掲載されています。",
+        "image": null,
+        "icon": null
+      }
+    },
+    {
+      "label": "ツイステ AGF2026 スペシャルステージ抽選フォーム",
+      "points": [
+        "『ディズニー ツイステッドワンダーランド』の公式サイトに掲載されています。",
+        "AGF2026スペシャルステージの無料観覧抽選応募フォームです。",
+        "イベント情報として、出演者や応募案内が確認できます。"
+      ],
+      "lines": [
+        {
+          "say": "ツイステ公式サイトでは、AGF2026のスペシャルステージ無料観覧抽選フォームが案内されています。",
+          "show": "AGF2026『ディズニー ツイステッドワンダーランド』スペシャルステージ 無料観覧抽選応募フォーム"
+        },
+        {
+          "say": "イベント情報として、出演者や会場、応募案内が確認できる公式のお知らせです。",
+          "show": "出演者・会場・応募締切"
+        }
+      ],
+      "url": "https://twisted-wonderland.aniplex.co.jp/form/agf2026/?utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://twisted-wonderland.aniplex.co.jp/form/agf2026/?utm_source=openai",
+        "title": "ツイステ AGF2026 スペシャルステージ抽選フォーム",
+        "site": "twisted-wonderland.aniplex.co.jp",
+        "description": "『ディズニー ツイステッドワンダーランド』の公式サイトに掲載されています。",
+        "image": "https://twisted-wonderland.aniplex.co.jp/violet/ogimages/ogimage_0808.png",
+        "icon": null
+      }
+    },
+    {
+      "label": "ツイステ キャラクターソングコレクション",
+      "points": [
+        "キャラクターソングCDとデジタル配信のリリースが発表されています。",
+        "公式ニュースとして、継続して注目される音楽企画です。",
+        "番組では、作品の音楽面の動きとしてご紹介できます。"
+      ],
+      "lines": [
+        {
+          "say": "ツイステ公式ニュースでは、キャラクターソングコレクションのCDとデジタル配信リリースが発表されています。",
+          "show": "Disney Twisted-Wonderland Character Song Collection"
+        },
+        {
+          "say": "作品の音楽面の動きとして、今後も注目したい公式情報です。",
+          "show": "CDおよびデジタル配信リリース"
+        }
+      ],
+      "url": "https://twisted-wonderland.aniplex.co.jp/news/?article_id=69961&utm_source=openai",
+      "details": [
+        null,
+        null,
+        null
+      ],
+      "link": {
+        "url": "https://twisted-wonderland.aniplex.co.jp/news/?article_id=69961&utm_source=openai",
+        "title": "ツイステ キャラクターソングコレクション",
+        "site": "twisted-wonderland.aniplex.co.jp",
+        "description": "キャラクターソングCDとデジタル配信のリリースが発表されています。",
+        "image": "https://twisted-wonderland.aniplex.co.jp/violet/ogimages/ogimage_0808.png",
+        "icon": null
+      }
+    }
+  ],
+  "closing": [
+    {
+      "say": "きょうのニュースはここまでです。どうぞ穏やかに、素敵な一日をお過ごしくださいませ。",
+      "show": "きょうのニュースはここまでです。どうぞ穏やかに、素敵な一日をお過ごしくださいませ。"
+    },
+    {
+      "say": "リルエル・モーニングラジオ、また次の朝にお会いしましょう。",
+      "show": "リルエル・モーニングラジオ、また次の朝にお会いしましょう。"
+    }
+  ],
+  "date": "2026-11-18",
+  "seconds": 83.46,
+  "lines_timed": [
+    {
+      "start": 0.4,
+      "end": 6.205,
+      "show": "おはようございます。リルエル・モーニングラジオ、やさしく小さなニュースをお届けします。",
+      "part": 0
+    },
+    {
+      "start": 6.425,
+      "end": 13.298,
+      "show": "きょうは東京ディズニーリゾートとツイステの公式情報を中心に、穏やかにご案内いたします。",
+      "part": 0
+    },
+    {
+      "start": 13.988,
+      "end": 22.487,
+      "show": "東京ディズニーリゾートの公式ニュース一覧に、11月17日付の新着項目が複数並びました。",
+      "part": 1
+    },
+    {
+      "start": 22.707,
+      "end": 29.58,
+      "show": "東京ディズニーランド関連のキャンペーン情報も見えており、公式更新の動きとして注目できます。",
+      "part": 1
+    },
+    {
+      "start": 30.27,
+      "end": 36.028,
+      "show": "東京ディズニーリゾート お知らせ一覧",
+      "part": 2
+    },
+    {
+      "start": 36.248,
+      "end": 43.446,
+      "show": "キャンパスデーパスポート（期間限定）販売のおしらせ",
+      "part": 2
+    },
+    {
+      "start": 44.136,
+      "end": 51.474,
+      "show": "AGF2026『ディズニー ツイステッドワンダーランド』スペシャルステージ 無料観覧抽選応募フォーム",
+      "part": 3
+    },
+    {
+      "start": 51.694,
+      "end": 58.521,
+      "show": "出演者・会場・応募締切",
+      "part": 3
+    },
+    {
+      "start": 59.211,
+      "end": 66.316,
+      "show": "Disney Twisted-Wonderland Character Song Collection",
+      "part": 4
+    },
+    {
+      "start": 66.536,
+      "end": 71.784,
+      "show": "CDおよびデジタル配信リリース",
+      "part": 4
+    },
+    {
+      "start": 72.474,
+      "end": 78.836,
+      "show": "きょうのニュースはここまでです。どうぞ穏やかに、素敵な一日をお過ごしくださいませ。",
+      "part": 5
+    },
+    {
+      "start": 79.056,
+      "end": 82.771,
+      "show": "リルエル・モーニングラジオ、また次の朝にお会いしましょう。",
+      "part": 5
+    }
+  ],
+  "segments": [
+    {
+      "kind": "opening",
+      "index": null,
+      "start": 0.4,
+      "end": 13.988
+    },
+    {
+      "kind": "news",
+      "index": 0,
+      "start": 13.988,
+      "end": 30.27
+    },
+    {
+      "kind": "news",
+      "index": 1,
+      "start": 30.27,
+      "end": 44.136
+    },
+    {
+      "kind": "news",
+      "index": 2,
+      "start": 44.136,
+      "end": 59.211
+    },
+    {
+      "kind": "news",
+      "index": 3,
+      "start": 59.211,
+      "end": 72.474
+    },
+    {
+      "kind": "closing",
+      "index": null,
+      "start": 72.474,
+      "end": 83.461
+    }
+  ],
+  "format": "monoradio/news-1",
+  "lang": "ja",
+  "made_at": "2026-11-18T12:46:03+09:00"
+}

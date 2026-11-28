@@ -1,0 +1,34 @@
+{
+  "format": "myradio/station-1",
+  "name": "リルエル・モーニングラジオ",
+  "description": "東京ディズニーリゾートとツイステの最新ニュースを、リルエルが毎朝お届けします。AI生成音声を使用しています。",
+  "tagline": "TDR & TWST DAILY BRIEF",
+  "logo": "logo.svg",
+  "url": "https://ryuma0820-lab.github.io/liluel-radio/",
+  "repo": "https://github.com/ryuma0820-lab/liluel-radio",
+  "language": "ja",
+  "languages": [
+    "ja"
+  ],
+  "schedule": {
+    "every": "day",
+    "time": "08:00",
+    "timezone": "Asia/Tokyo"
+  },
+  "episodes": "episodes.json",
+  "character": {
+    "pack": "character/character.json",
+    "thumbnail": "character/idle.webp",
+    "note": "確定したリルエルのPNG Tuber原画を使ったアニメーション立ち絵。"
+  },
+  "credits": [
+    "音声はAI合成（ElevenLabs）です。",
+    "プレーヤー原案：monoradio102 / myradio（MIT License）"
+  ],
+  "caster": "リルエル｜AI音声キャスター",
+  "audio": {
+    "dir": "audio",
+    "keep_days": 30
+  },
+  "weather": false
+}
